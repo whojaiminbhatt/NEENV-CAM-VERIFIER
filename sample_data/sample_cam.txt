@@ -1,0 +1,16 @@
+# Borrower Profile
+Promoter experience: 18 years.
+The borrower has a nationwide distribution network.
+# Bureau Analysis
+Bureau score: 735.
+# Banking Analysis
+Average monthly bank credits: ₹31 lakh (FY2025-26).
+Cash deposit share: 15%.
+Cheque/ECS bounces: 0.
+Total bank credits: ₹3 crore (FY2025-26).
+# GST Analysis
+GST turnover: ₹2.1 crore (FY2025-26).
+GST to bank ratio: 90%.
+GST and banking are consistent.
+# ITR Analysis
+ITR revenue: ₹2.3 crore (FY2025-26).

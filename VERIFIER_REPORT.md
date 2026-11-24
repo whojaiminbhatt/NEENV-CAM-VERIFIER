@@ -1,0 +1,9 @@
+# Verifier report — synthetic demonstration
+
+Neenv's actual sample case and planted-error CAM were unavailable. This report evaluates the supplied synthetic fixture only; it does not establish accuracy on Neenv's sample.
+
+The offline run for fictional lender A (scheme 101, configuration 102 v2) calculated average monthly credits of ₹25 lakh, cash deposit share of 10%, three cheque/ECS bounces, and GST-to-bank credits ratio of 0.8. Each calculation carries source rows/fields and a formula. All eight known planted errors were flagged: six mismatches (promoter experience, monthly credits, cash share, bounce count, wrong-year GST turnover and GST/bank ratio), one unsupported nationwide-distribution claim, and one conflict (consistency wording despite 25% variance relative to GST). Three correct claims were supported. Overall status: FAIL. The exact findings and input/configuration fingerprints are in `sample_data/example_report.json`.
+
+regression run: 58 tests passed (21 original + 37 additional cases). The tests cover explicit invalid financial years, assertions in headings, compound claims, independently checked model quotations, malicious or incomplete model suggestions, transaction category normalization/rejection, duplicate safeguards, and audit fingerprints. Known duplicate IDs are rejected; suspicious events without reliable IDs require reconciliation rather than automatic deletion.
+
+No known planted assertion was missed in this controlled fixture. Complex prose, ambiguous periods, unrecognized metrics, upstream extraction/classification errors and duplicate events with different signatures can still require human review. The LLM success and failure paths were tested with mocks, not a live API. Raw multi-format document ingestion is a future enhancement. Neenv's actual extracts must be mapped and its actual CAM verified before reporting real caught/missed results.

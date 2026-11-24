@@ -1,0 +1,533 @@
+[
+  {
+    "id": 1,
+    "name": "Synthetic Lender A",
+    "code": "DEMO_A",
+    "schemes": [
+      {
+        "id": 101,
+        "name": "Working Capital",
+        "code": "WC",
+        "loan_type": "WORKING_CAPITAL",
+        "configurations": [
+          {
+            "id": 101,
+            "version": 1,
+            "from": "2020-01-01",
+            "to": "2025-01-01",
+            "name": "Working Capital CAM",
+            "cam_type": "NEW_APPLICATION",
+            "status": "EXPIRED",
+            "metadata": [
+              {
+                "group": "cam_sections",
+                "key": "borrower_profile",
+                "value": {
+                  "required": true
+                },
+                "order": 1
+              },
+              {
+                "group": "cam_sections",
+                "key": "bureau_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 2
+              },
+              {
+                "group": "cam_sections",
+                "key": "banking_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 3
+              },
+              {
+                "group": "cam_sections",
+                "key": "gst_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 4
+              },
+              {
+                "group": "cam_sections",
+                "key": "itr_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 5
+              },
+              {
+                "group": "credit_policy",
+                "key": "required_bank_months",
+                "value": 12
+              },
+              {
+                "group": "credit_policy",
+                "key": "min_bureau_score",
+                "value": 680
+              },
+              {
+                "group": "credit_policy",
+                "key": "max_cash_deposit_share_pct",
+                "value": 20
+              },
+              {
+                "group": "verification_rules",
+                "key": "gst_bank_variance_warning_pct",
+                "value": 10
+              },
+              {
+                "group": "verification_rules",
+                "key": "allow_consistent_wording_only_if_variance_within_pct",
+                "value": 10
+              },
+              {
+                "group": "ratios",
+                "key": "gst_to_bank_ratio",
+                "value": {
+                  "enabled": true
+                }
+              }
+            ]
+          },
+          {
+            "id": 102,
+            "version": 2,
+            "from": "2025-01-01",
+            "name": "Working Capital CAM",
+            "cam_type": "NEW_APPLICATION",
+            "status": "ACTIVE",
+            "metadata": [
+              {
+                "group": "cam_sections",
+                "key": "borrower_profile",
+                "value": {
+                  "required": true
+                },
+                "order": 1
+              },
+              {
+                "group": "cam_sections",
+                "key": "bureau_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 2
+              },
+              {
+                "group": "cam_sections",
+                "key": "banking_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 3
+              },
+              {
+                "group": "cam_sections",
+                "key": "gst_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 4
+              },
+              {
+                "group": "cam_sections",
+                "key": "itr_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 5
+              },
+              {
+                "group": "credit_policy",
+                "key": "required_bank_months",
+                "value": 12
+              },
+              {
+                "group": "credit_policy",
+                "key": "min_bureau_score",
+                "value": 700
+              },
+              {
+                "group": "credit_policy",
+                "key": "max_cash_deposit_share_pct",
+                "value": 20
+              },
+              {
+                "group": "verification_rules",
+                "key": "gst_bank_variance_warning_pct",
+                "value": 10
+              },
+              {
+                "group": "verification_rules",
+                "key": "allow_consistent_wording_only_if_variance_within_pct",
+                "value": 10
+              },
+              {
+                "group": "ratios",
+                "key": "gst_to_bank_ratio",
+                "value": {
+                  "enabled": true
+                }
+              }
+            ]
+          },
+          {
+            "id": 103,
+            "version": 1,
+            "from": "2025-01-01",
+            "name": "Renewal CAM",
+            "cam_type": "RENEWAL",
+            "status": "ACTIVE",
+            "metadata": [
+              {
+                "group": "cam_sections",
+                "key": "borrower_profile",
+                "value": {
+                  "required": true
+                },
+                "order": 1
+              },
+              {
+                "group": "cam_sections",
+                "key": "bureau_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 2
+              },
+              {
+                "group": "cam_sections",
+                "key": "banking_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 3
+              },
+              {
+                "group": "cam_sections",
+                "key": "gst_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 4
+              },
+              {
+                "group": "cam_sections",
+                "key": "itr_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 5
+              },
+              {
+                "group": "credit_policy",
+                "key": "required_bank_months",
+                "value": 12
+              },
+              {
+                "group": "credit_policy",
+                "key": "min_bureau_score",
+                "value": 700
+              },
+              {
+                "group": "credit_policy",
+                "key": "max_cash_deposit_share_pct",
+                "value": 20
+              },
+              {
+                "group": "verification_rules",
+                "key": "gst_bank_variance_warning_pct",
+                "value": 10
+              },
+              {
+                "group": "verification_rules",
+                "key": "allow_consistent_wording_only_if_variance_within_pct",
+                "value": 10
+              },
+              {
+                "group": "ratios",
+                "key": "gst_to_bank_ratio",
+                "value": {
+                  "enabled": true
+                }
+              }
+            ]
+          },
+          {
+            "id": 104,
+            "version": 3,
+            "from": "2025-01-01",
+            "name": "Working Capital CAM",
+            "cam_type": "NEW_APPLICATION",
+            "status": "INACTIVE",
+            "metadata": [
+              {
+                "group": "cam_sections",
+                "key": "borrower_profile",
+                "value": {
+                  "required": true
+                },
+                "order": 1
+              },
+              {
+                "group": "cam_sections",
+                "key": "bureau_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 2
+              },
+              {
+                "group": "cam_sections",
+                "key": "banking_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 3
+              },
+              {
+                "group": "cam_sections",
+                "key": "gst_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 4
+              },
+              {
+                "group": "cam_sections",
+                "key": "itr_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 5
+              },
+              {
+                "group": "credit_policy",
+                "key": "required_bank_months",
+                "value": 12
+              },
+              {
+                "group": "credit_policy",
+                "key": "min_bureau_score",
+                "value": 700
+              },
+              {
+                "group": "credit_policy",
+                "key": "max_cash_deposit_share_pct",
+                "value": 20
+              },
+              {
+                "group": "verification_rules",
+                "key": "gst_bank_variance_warning_pct",
+                "value": 10
+              },
+              {
+                "group": "verification_rules",
+                "key": "allow_consistent_wording_only_if_variance_within_pct",
+                "value": 10
+              },
+              {
+                "group": "ratios",
+                "key": "gst_to_bank_ratio",
+                "value": {
+                  "enabled": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "name": "Business Term Loan",
+        "code": "TL",
+        "loan_type": "TERM_LOAN",
+        "configurations": [
+          {
+            "id": 105,
+            "version": 1,
+            "from": "2025-01-01",
+            "name": "Term Loan CAM",
+            "cam_type": "NEW_APPLICATION",
+            "status": "ACTIVE",
+            "metadata": [
+              {
+                "group": "cam_sections",
+                "key": "borrower_profile",
+                "value": {
+                  "required": true
+                },
+                "order": 1
+              },
+              {
+                "group": "cam_sections",
+                "key": "bureau_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 2
+              },
+              {
+                "group": "cam_sections",
+                "key": "banking_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 3
+              },
+              {
+                "group": "cam_sections",
+                "key": "gst_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 4
+              },
+              {
+                "group": "cam_sections",
+                "key": "itr_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 5
+              },
+              {
+                "group": "credit_policy",
+                "key": "required_bank_months",
+                "value": 6
+              },
+              {
+                "group": "credit_policy",
+                "key": "min_bureau_score",
+                "value": 700
+              },
+              {
+                "group": "credit_policy",
+                "key": "max_cash_deposit_share_pct",
+                "value": 20
+              },
+              {
+                "group": "verification_rules",
+                "key": "gst_bank_variance_warning_pct",
+                "value": 10
+              },
+              {
+                "group": "verification_rules",
+                "key": "allow_consistent_wording_only_if_variance_within_pct",
+                "value": 10
+              },
+              {
+                "group": "ratios",
+                "key": "gst_to_bank_ratio",
+                "value": {
+                  "enabled": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Synthetic Lender B",
+    "code": "DEMO_B",
+    "schemes": [
+      {
+        "id": 201,
+        "name": "Working Capital",
+        "code": "WC",
+        "loan_type": "WORKING_CAPITAL",
+        "configurations": [
+          {
+            "id": 201,
+            "version": 1,
+            "from": "2020-01-01",
+            "name": "Working Capital CAM",
+            "cam_type": "NEW_APPLICATION",
+            "status": "ACTIVE",
+            "metadata": [
+              {
+                "group": "cam_sections",
+                "key": "borrower_profile",
+                "value": {
+                  "required": true
+                },
+                "order": 1
+              },
+              {
+                "group": "cam_sections",
+                "key": "bureau_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 2
+              },
+              {
+                "group": "cam_sections",
+                "key": "banking_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 3
+              },
+              {
+                "group": "cam_sections",
+                "key": "gst_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 4
+              },
+              {
+                "group": "cam_sections",
+                "key": "itr_analysis",
+                "value": {
+                  "required": true
+                },
+                "order": 5
+              },
+              {
+                "group": "credit_policy",
+                "key": "required_bank_months",
+                "value": 7
+              },
+              {
+                "group": "credit_policy",
+                "key": "min_bureau_score",
+                "value": 700
+              },
+              {
+                "group": "credit_policy",
+                "key": "max_cash_deposit_share_pct",
+                "value": 8
+              },
+              {
+                "group": "verification_rules",
+                "key": "gst_bank_variance_warning_pct",
+                "value": 10
+              },
+              {
+                "group": "verification_rules",
+                "key": "allow_consistent_wording_only_if_variance_within_pct",
+                "value": 10
+              },
+              {
+                "group": "ratios",
+                "key": "gst_to_bank_ratio",
+                "value": {
+                  "enabled": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

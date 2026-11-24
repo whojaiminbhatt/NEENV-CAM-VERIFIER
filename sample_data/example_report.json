@@ -1,0 +1,1249 @@
+{
+  "case_id": "SYNTHETIC-001",
+  "partner_id": 1,
+  "scheme_id": 101,
+  "cam_type": "NEW_APPLICATION",
+  "partner_cam_configuration_id": 102,
+  "version": 2,
+  "configuration_status": "ACTIVE",
+  "historical_replay": false,
+  "audit": {
+    "normalized_case_sha256": "c9fc81db5dd7198cf74cc66aea8cce3e669092ee20861cb07a467bfe0606a353",
+    "cam_text_sha256": "dcce4a1551c5a7cb9636d8070e5f286d4f2f9340928c14068aea8e3145e6c8e9",
+    "assembled_configuration_sha256": "60274cca9a226142a7f04567b2f20205876e29b0277e69f02d70de6ba29f400a",
+    "as_of": "2026-04-01",
+    "verifier_version": "3.0.0"
+  },
+  "status": "FAIL",
+  "extraction_mode": "offline",
+  "warnings": [],
+  "coverage": {
+    "expected_months": [
+      "2025-04",
+      "2025-05",
+      "2025-06",
+      "2025-07",
+      "2025-08",
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ],
+    "covered_months": [
+      "2025-04",
+      "2025-05",
+      "2025-06",
+      "2025-07",
+      "2025-08",
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ],
+    "missing_months": [],
+    "complete": true,
+    "bank_data_reliable": true,
+    "suspected_duplicate_rows": []
+  },
+  "facts": [
+    {
+      "metric": "bank.total_credits",
+      "value": "30000000",
+      "unit": "INR",
+      "period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "sources": [
+        {
+          "document": "bank_transactions.csv",
+          "field": "credit",
+          "rows": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "document": "case.json",
+          "field": "covered_months",
+          "rows": []
+        }
+      ],
+      "calculation": "Sum gross incoming credits",
+      "complete": true
+    },
+    {
+      "metric": "bank.average_monthly_credit",
+      "value": "2500000",
+      "unit": "INR",
+      "period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "sources": [
+        {
+          "document": "bank_transactions.csv",
+          "field": "credit",
+          "rows": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "document": "case.json",
+          "field": "covered_months",
+          "rows": []
+        }
+      ],
+      "calculation": "Gross credits / covered months",
+      "complete": true
+    },
+    {
+      "metric": "bank.cash_deposit_share",
+      "value": "10.0",
+      "unit": "PERCENT",
+      "period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "sources": [
+        {
+          "document": "bank_transactions.csv",
+          "field": "credit,category",
+          "rows": [
+            3,
+            5,
+            8,
+            10,
+            12,
+            15,
+            17,
+            19,
+            21,
+            24,
+            26,
+            28
+          ]
+        },
+        {
+          "document": "bank_transactions.csv",
+          "field": "credit",
+          "rows": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "document": "case.json",
+          "field": "covered_months",
+          "rows": []
+        }
+      ],
+      "calculation": "Cash credits / gross credits * 100",
+      "complete": true
+    },
+    {
+      "metric": "bank.cheque_ecs_bounces",
+      "value": "3",
+      "unit": "COUNT",
+      "period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "sources": [
+        {
+          "document": "bank_transactions.csv",
+          "field": "category",
+          "rows": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "document": "bank_transactions.csv",
+          "field": "category",
+          "rows": [
+            6,
+            13,
+            22
+          ]
+        },
+        {
+          "document": "case.json",
+          "field": "covered_months",
+          "rows": []
+        }
+      ],
+      "calculation": "Count return event rows",
+      "complete": true
+    },
+    {
+      "metric": "gst.turnover",
+      "value": "24000000",
+      "unit": "INR",
+      "period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "sources": [
+        {
+          "document": "gst_summary.json",
+          "field": "[0].amount",
+          "rows": []
+        }
+      ],
+      "calculation": "Direct extract",
+      "complete": true
+    },
+    {
+      "metric": "gst.turnover",
+      "value": "21000000",
+      "unit": "INR",
+      "period": {
+        "start": "2024-04-01",
+        "end": "2025-03-31"
+      },
+      "sources": [
+        {
+          "document": "gst_summary.json",
+          "field": "[1].amount",
+          "rows": []
+        }
+      ],
+      "calculation": "Direct extract",
+      "complete": true
+    },
+    {
+      "metric": "itr.revenue",
+      "value": "23000000",
+      "unit": "INR",
+      "period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "sources": [
+        {
+          "document": "itr_summary.json",
+          "field": "[0].amount",
+          "rows": []
+        }
+      ],
+      "calculation": "Direct extract",
+      "complete": true
+    },
+    {
+      "metric": "comparison.gst_to_bank_ratio",
+      "value": "0.8",
+      "unit": "RATIO",
+      "period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "sources": [
+        {
+          "document": "gst_summary.json",
+          "field": "[0].amount",
+          "rows": []
+        },
+        {
+          "document": "bank_transactions.csv",
+          "field": "credit",
+          "rows": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "document": "case.json",
+          "field": "covered_months",
+          "rows": []
+        }
+      ],
+      "calculation": "GST turnover / gross bank credits",
+      "complete": true
+    },
+    {
+      "metric": "comparison.gst_bank_variance_pct",
+      "value": "25.00",
+      "unit": "PERCENT",
+      "period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "sources": [
+        {
+          "document": "gst_summary.json",
+          "field": "[0].amount",
+          "rows": []
+        },
+        {
+          "document": "bank_transactions.csv",
+          "field": "credit",
+          "rows": [
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "document": "case.json",
+          "field": "covered_months",
+          "rows": []
+        }
+      ],
+      "calculation": "Absolute difference / GST turnover * 100",
+      "complete": true
+    },
+    {
+      "metric": "bureau.score",
+      "value": "735",
+      "unit": "COUNT",
+      "period": null,
+      "sources": [
+        {
+          "document": "bureau_summary.json",
+          "field": "bureau_score",
+          "rows": []
+        }
+      ],
+      "calculation": "Direct extract",
+      "complete": true
+    },
+    {
+      "metric": "business.name",
+      "value": "Example Traders",
+      "unit": "TEXT",
+      "period": null,
+      "sources": [
+        {
+          "document": "business_profile.json",
+          "field": "business_name",
+          "rows": []
+        }
+      ],
+      "calculation": "Direct extract",
+      "complete": true
+    },
+    {
+      "metric": "business.promoter_experience",
+      "value": "8",
+      "unit": "COUNT",
+      "period": null,
+      "sources": [
+        {
+          "document": "business_profile.json",
+          "field": "promoter_experience_years",
+          "rows": []
+        }
+      ],
+      "calculation": "Direct extract",
+      "complete": true
+    }
+  ],
+  "claims": [
+    {
+      "line": 2,
+      "claim": "Promoter experience: 18 years.",
+      "metric": "business.promoter_experience",
+      "cam_value": 18,
+      "claimed_unit": "COUNT",
+      "claimed_period": null,
+      "period_error": null,
+      "status": "MISMATCH",
+      "reason": "Value or unit differs from source",
+      "evidence": {
+        "metric": "business.promoter_experience",
+        "value": "8",
+        "unit": "COUNT",
+        "period": null,
+        "sources": [
+          {
+            "document": "business_profile.json",
+            "field": "promoter_experience_years",
+            "rows": []
+          }
+        ],
+        "calculation": "Direct extract",
+        "complete": true
+      }
+    },
+    {
+      "line": 3,
+      "claim": "The borrower has a nationwide distribution network.",
+      "metric": null,
+      "cam_value": null,
+      "claimed_unit": null,
+      "claimed_period": null,
+      "period_error": null,
+      "status": "UNSUPPORTED",
+      "reason": "No deterministic evidence mapping; manual review required",
+      "evidence": null
+    },
+    {
+      "line": 5,
+      "claim": "Bureau score: 735.",
+      "metric": "bureau.score",
+      "cam_value": 735,
+      "claimed_unit": "COUNT",
+      "claimed_period": null,
+      "period_error": null,
+      "status": "SUPPORTED",
+      "reason": "Matches source",
+      "evidence": {
+        "metric": "bureau.score",
+        "value": "735",
+        "unit": "COUNT",
+        "period": null,
+        "sources": [
+          {
+            "document": "bureau_summary.json",
+            "field": "bureau_score",
+            "rows": []
+          }
+        ],
+        "calculation": "Direct extract",
+        "complete": true
+      }
+    },
+    {
+      "line": 7,
+      "claim": "Average monthly bank credits: ₹31 lakh (FY2025-26).",
+      "metric": "bank.average_monthly_credit",
+      "cam_value": 3100000,
+      "claimed_unit": "INR",
+      "claimed_period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "period_error": null,
+      "status": "MISMATCH",
+      "reason": "Value or unit differs from source",
+      "evidence": {
+        "metric": "bank.average_monthly_credit",
+        "value": "2500000",
+        "unit": "INR",
+        "period": {
+          "start": "2025-04-01",
+          "end": "2026-03-31"
+        },
+        "sources": [
+          {
+            "document": "bank_transactions.csv",
+            "field": "credit",
+            "rows": [
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          {
+            "document": "case.json",
+            "field": "covered_months",
+            "rows": []
+          }
+        ],
+        "calculation": "Gross credits / covered months",
+        "complete": true
+      }
+    },
+    {
+      "line": 8,
+      "claim": "Cash deposit share: 15%.",
+      "metric": "bank.cash_deposit_share",
+      "cam_value": 15,
+      "claimed_unit": "PERCENT",
+      "claimed_period": null,
+      "period_error": null,
+      "status": "MISMATCH",
+      "reason": "Value or unit differs from source",
+      "evidence": {
+        "metric": "bank.cash_deposit_share",
+        "value": "10.0",
+        "unit": "PERCENT",
+        "period": {
+          "start": "2025-04-01",
+          "end": "2026-03-31"
+        },
+        "sources": [
+          {
+            "document": "bank_transactions.csv",
+            "field": "credit,category",
+            "rows": [
+              3,
+              5,
+              8,
+              10,
+              12,
+              15,
+              17,
+              19,
+              21,
+              24,
+              26,
+              28
+            ]
+          },
+          {
+            "document": "bank_transactions.csv",
+            "field": "credit",
+            "rows": [
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          {
+            "document": "case.json",
+            "field": "covered_months",
+            "rows": []
+          }
+        ],
+        "calculation": "Cash credits / gross credits * 100",
+        "complete": true
+      }
+    },
+    {
+      "line": 9,
+      "claim": "Cheque/ECS bounces: 0.",
+      "metric": "bank.cheque_ecs_bounces",
+      "cam_value": 0,
+      "claimed_unit": "COUNT",
+      "claimed_period": null,
+      "period_error": null,
+      "status": "MISMATCH",
+      "reason": "Value or unit differs from source",
+      "evidence": {
+        "metric": "bank.cheque_ecs_bounces",
+        "value": "3",
+        "unit": "COUNT",
+        "period": {
+          "start": "2025-04-01",
+          "end": "2026-03-31"
+        },
+        "sources": [
+          {
+            "document": "bank_transactions.csv",
+            "field": "category",
+            "rows": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          {
+            "document": "bank_transactions.csv",
+            "field": "category",
+            "rows": [
+              6,
+              13,
+              22
+            ]
+          },
+          {
+            "document": "case.json",
+            "field": "covered_months",
+            "rows": []
+          }
+        ],
+        "calculation": "Count return event rows",
+        "complete": true
+      }
+    },
+    {
+      "line": 10,
+      "claim": "Total bank credits: ₹3 crore (FY2025-26).",
+      "metric": "bank.total_credits",
+      "cam_value": 30000000,
+      "claimed_unit": "INR",
+      "claimed_period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "period_error": null,
+      "status": "SUPPORTED",
+      "reason": "Matches source",
+      "evidence": {
+        "metric": "bank.total_credits",
+        "value": "30000000",
+        "unit": "INR",
+        "period": {
+          "start": "2025-04-01",
+          "end": "2026-03-31"
+        },
+        "sources": [
+          {
+            "document": "bank_transactions.csv",
+            "field": "credit",
+            "rows": [
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          {
+            "document": "case.json",
+            "field": "covered_months",
+            "rows": []
+          }
+        ],
+        "calculation": "Sum gross incoming credits",
+        "complete": true
+      }
+    },
+    {
+      "line": 12,
+      "claim": "GST turnover: ₹2.1 crore (FY2025-26).",
+      "metric": "gst.turnover",
+      "cam_value": 21000000.0,
+      "claimed_unit": "INR",
+      "claimed_period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "period_error": null,
+      "status": "MISMATCH",
+      "reason": "Value or unit differs from source",
+      "evidence": {
+        "metric": "gst.turnover",
+        "value": "24000000",
+        "unit": "INR",
+        "period": {
+          "start": "2025-04-01",
+          "end": "2026-03-31"
+        },
+        "sources": [
+          {
+            "document": "gst_summary.json",
+            "field": "[0].amount",
+            "rows": []
+          }
+        ],
+        "calculation": "Direct extract",
+        "complete": true
+      }
+    },
+    {
+      "line": 13,
+      "claim": "GST to bank ratio: 90%.",
+      "metric": "comparison.gst_to_bank_ratio",
+      "cam_value": 0.9,
+      "claimed_unit": "RATIO",
+      "claimed_period": null,
+      "period_error": null,
+      "status": "MISMATCH",
+      "reason": "Value or unit differs from source",
+      "evidence": {
+        "metric": "comparison.gst_to_bank_ratio",
+        "value": "0.8",
+        "unit": "RATIO",
+        "period": {
+          "start": "2025-04-01",
+          "end": "2026-03-31"
+        },
+        "sources": [
+          {
+            "document": "gst_summary.json",
+            "field": "[0].amount",
+            "rows": []
+          },
+          {
+            "document": "bank_transactions.csv",
+            "field": "credit",
+            "rows": [
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          {
+            "document": "case.json",
+            "field": "covered_months",
+            "rows": []
+          }
+        ],
+        "calculation": "GST turnover / gross bank credits",
+        "complete": true
+      }
+    },
+    {
+      "line": 14,
+      "claim": "GST and banking are consistent.",
+      "metric": "comparison.consistency",
+      "cam_value": null,
+      "claimed_unit": null,
+      "claimed_period": null,
+      "period_error": null,
+      "status": "CONFLICT",
+      "reason": "Configured threshold: 10%",
+      "evidence": {
+        "metric": "comparison.gst_bank_variance_pct",
+        "value": "25.00",
+        "unit": "PERCENT",
+        "period": {
+          "start": "2025-04-01",
+          "end": "2026-03-31"
+        },
+        "sources": [
+          {
+            "document": "gst_summary.json",
+            "field": "[0].amount",
+            "rows": []
+          },
+          {
+            "document": "bank_transactions.csv",
+            "field": "credit",
+            "rows": [
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          {
+            "document": "case.json",
+            "field": "covered_months",
+            "rows": []
+          }
+        ],
+        "calculation": "Absolute difference / GST turnover * 100",
+        "complete": true
+      }
+    },
+    {
+      "line": 16,
+      "claim": "ITR revenue: ₹2.3 crore (FY2025-26).",
+      "metric": "itr.revenue",
+      "cam_value": 23000000.0,
+      "claimed_unit": "INR",
+      "claimed_period": {
+        "start": "2025-04-01",
+        "end": "2026-03-31"
+      },
+      "period_error": null,
+      "status": "SUPPORTED",
+      "reason": "Matches source",
+      "evidence": {
+        "metric": "itr.revenue",
+        "value": "23000000",
+        "unit": "INR",
+        "period": {
+          "start": "2025-04-01",
+          "end": "2026-03-31"
+        },
+        "sources": [
+          {
+            "document": "itr_summary.json",
+            "field": "[0].amount",
+            "rows": []
+          }
+        ],
+        "calculation": "Direct extract",
+        "complete": true
+      }
+    }
+  ],
+  "policy_issues": [
+    {
+      "code": "GST_BANK_VARIANCE",
+      "status": "WARN",
+      "message": "Variance requires clarification; reason not established",
+      "evidence": {
+        "metric": "comparison.gst_bank_variance_pct",
+        "value": "25.00",
+        "unit": "PERCENT",
+        "period": {
+          "start": "2025-04-01",
+          "end": "2026-03-31"
+        },
+        "sources": [
+          {
+            "document": "gst_summary.json",
+            "field": "[0].amount",
+            "rows": []
+          },
+          {
+            "document": "bank_transactions.csv",
+            "field": "credit",
+            "rows": [
+              2,
+              3,
+              4,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28
+            ]
+          },
+          {
+            "document": "case.json",
+            "field": "covered_months",
+            "rows": []
+          }
+        ],
+        "calculation": "Absolute difference / GST turnover * 100",
+        "complete": true
+      }
+    },
+    {
+      "code": "GST_ITR_VARIANCE",
+      "status": "WARN",
+      "message": "GST and ITR differ; reason not established",
+      "evidence": [
+        {
+          "metric": "gst.turnover",
+          "value": "24000000",
+          "unit": "INR",
+          "period": {
+            "start": "2025-04-01",
+            "end": "2026-03-31"
+          },
+          "sources": [
+            {
+              "document": "gst_summary.json",
+              "field": "[0].amount",
+              "rows": []
+            }
+          ],
+          "calculation": "Direct extract",
+          "complete": true
+        },
+        {
+          "metric": "itr.revenue",
+          "value": "23000000",
+          "unit": "INR",
+          "period": {
+            "start": "2025-04-01",
+            "end": "2026-03-31"
+          },
+          "sources": [
+            {
+              "document": "itr_summary.json",
+              "field": "[0].amount",
+              "rows": []
+            }
+          ],
+          "calculation": "Direct extract",
+          "complete": true
+        }
+      ]
+    }
+  ],
+  "proposed_queries": [
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": 2,
+      "question": "Please clarify: Promoter experience: 18 years. (Value or unit differs from source)",
+      "status": "PROPOSED"
+    },
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": 3,
+      "question": "Please clarify: The borrower has a nationwide distribution network. (No deterministic evidence mapping; manual review required)",
+      "status": "PROPOSED"
+    },
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": 7,
+      "question": "Please clarify: Average monthly bank credits: ₹31 lakh (FY2025-26). (Value or unit differs from source)",
+      "status": "PROPOSED"
+    },
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": 8,
+      "question": "Please clarify: Cash deposit share: 15%. (Value or unit differs from source)",
+      "status": "PROPOSED"
+    },
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": 9,
+      "question": "Please clarify: Cheque/ECS bounces: 0. (Value or unit differs from source)",
+      "status": "PROPOSED"
+    },
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": 12,
+      "question": "Please clarify: GST turnover: ₹2.1 crore (FY2025-26). (Value or unit differs from source)",
+      "status": "PROPOSED"
+    },
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": 13,
+      "question": "Please clarify: GST to bank ratio: 90%. (Value or unit differs from source)",
+      "status": "PROPOSED"
+    },
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": 14,
+      "question": "Please clarify: GST and banking are consistent. (Configured threshold: 10%)",
+      "status": "PROPOSED"
+    },
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": null,
+      "question": "Variance requires clarification; reason not established",
+      "status": "PROPOSED"
+    },
+    {
+      "case_id": "SYNTHETIC-001",
+      "partner_id": 1,
+      "scheme_id": 101,
+      "cam_type": "NEW_APPLICATION",
+      "partner_cam_configuration_id": 102,
+      "version": 2,
+      "configuration_status": "ACTIVE",
+      "historical_replay": false,
+      "line": null,
+      "question": "GST and ITR differ; reason not established",
+      "status": "PROPOSED"
+    }
+  ],
+  "manual_approval_required": true
+}
